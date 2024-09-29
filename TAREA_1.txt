@@ -1,0 +1,113 @@
+EJERCICIO 1
+x=0
+i=1
+res=1
+x=int(input("ingresar el limite"))
+print(res)
+while i <= x:
+    if(i%2==0):
+        res=res-2
+    else:
+        res=res+4
+    print(res)
+    i=i+1
+    
+EJERCICIO 3
+x=0
+i=1
+res=2
+x=int(input("ingresar el limite"))
+print(res)
+while i <= x:
+    if(i%2==0):
+        res=res+3
+    else:
+        res=res-1
+    print(res)
+    i=i+1
+
+EJERCICIO 4
+vocales=['a','e','i','o','u']
+i=1
+x=0
+x=int(input("ingresar el numero de secuencias"))
+while i <= x:
+    m=0 # (m) inicializa el indice para recorrer las vocales
+    while m < len(vocales):
+        print(f"{vocales[m]}{i}{vocales[m]}")
+        m+=1
+    i+=1    
+
+EJERCICIO 5
+letras=['a', 'e']
+i=1
+x=0
+x=int(input("ingresar el numero de secuencias"))
+while i <= x:
+    if (i%2 == 0):
+       print(letras[1])
+       print(letras[0])
+       print(i)
+       print(i)
+    else:
+       print(letras[0])
+       print(letras[1])
+       print(i)
+       print(i)
+    i=i+1
+
+EJERCICIO 6
+secuencia = [9, 5, 1]
+incrementos_pequenos = [6, 16]
+incrementos_grandes = [14, 36, 58]
+n = 0
+n=int(input("ingresar el limite"))
+i_pequeno = 0  # inicio incrementos pequeños
+i_grande = 0  # inicio incrementos grandes
+
+while len(secuencia) < n:
+    if len(secuencia) % 2 == 1:  # Si es impar el incremento sera grande
+        nuevo_valor = secuencia[-1] + incrementos_grandes[i_grande]
+        secuencia.append(nuevo_valor)
+        i_grande += 1  # Avanzamos en los incrementos grandes
+    else:  # Si es par el incremento es pequeño
+        nuevo_valor = secuencia[-1] + incrementos_pequenos[i_pequeno]
+        secuencia.append(nuevo_valor)
+        i_pequeno += 1  # Avanzamos en los incrementos pequeños
+
+
+for numero in secuencia:
+    print(numero)
+
+EJERCICIO 7
+impar=251
+par=152
+x=0
+i=1
+x=int(input("ingresar el numero limite"))
+secuencia=[]
+while i<=x:
+    if i%2==0:
+        secuencia.append(par)
+        par+=100
+    else:
+        secuencia.append(impar)
+        impar+=1
+    i+=1
+m=0 
+while m<len(secuencia):
+    print(secuencia[m])
+    m+=1
+
+EJERCICIO 8
+secuencia = [1, 1]
+incrementos = [0, 1, 2, 3, 4, 7, 18, 29]
+i = 2
+while len(secuencia) < 9:
+    siguiente = secuencia[-1] + incrementos[i-1]
+    secuencia.append(siguiente)
+    i += 1
+print(secuencia)
+
+
+
