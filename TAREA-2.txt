@@ -1,0 +1,101 @@
+EJERCICIO 1
+
+numeros=[]
+for i in range(10):
+    num=int(input("ingresar un numero "))
+    numeros.append(num)
+    positivos=0
+    negativos= 0
+    ceros=0
+    for num in numeros:
+        if num>0:
+            positivos+=1
+        elif num<0:
+                negativos+=1
+        else:
+            ceros+=1
+    print("numeros positivos:" ,positivos )        
+    print("numeros negativos:" ,negativos )        
+    print("ceros:" ,ceros )  
+    print(numeros)
+
+EJERCICIO 2
+
+numeros=[]
+for i in range(10):
+    num=int(input("ingresar un numero "))
+    numeros.append(num)
+    positivos=0
+    negativos= 0
+    sumapositivos=0
+    sumanegativos=0
+    for num in numeros:
+        if num>0:
+            positivos+=1
+            sumapositivos+=num
+        elif num<0:
+                negativos+=1
+                sumanegativos+=num
+    if positivos>0:
+        mediapositivos=sumapositivos/positivos
+    else:
+        mediapositivos=0
+    if negativos>0:
+        medianegativos=sumanegativos/negativos
+    else:
+        medianegativos=0
+    print("la media de los positivos es :" ,mediapositivos )        
+    print("la media de los negativos es :" ,medianegativos )
+    print(numeros)
+
+EJERCICIO 3
+
+N=int(input("ingresa el numero de personas "))
+alturas=[]
+for i in range(N):
+    alt=float(input("ingresar altura "))
+    alturas.append(alt)
+    sumaalturas=sum(alturas)
+    alturamedia=sumaalturas/N
+    supmedia=0  #supmedia es alturas superior a la media
+    bajomedia=0 #bajo la media
+    for alt in alturas:
+        if alt>alturamedia:
+            supmedia+=1
+        elif alt<alturamedia:
+            bajomedia+=1
+    print("la altura media es ",alturamedia)
+    print("el numero de personas que superia la media es de ",supmedia)
+    print("el numero de personas por debajo la media es ",bajomedia)
+
+EJERCICIO 4
+
+numeros=[]
+for i in range(10):
+    num=int(input("ingresar un numero "))
+    numeros.append(num)
+    positivos=0
+    negativos= 0
+    sumapositivos=0
+    sumanegativos=0
+    for num in numeros:
+        if num>0:
+            positivos+=1
+            sumapositivos+=num
+        elif num<0:
+                negativos+=1
+                sumanegativos+=num
+    if positivos>0:
+        mediapositivos=sumapositivos/positivos
+    else:
+        mediapositivos=0
+    if negativos>0:
+        medianegativos=sumanegativos/negativos
+    else:
+        medianegativos=0
+    print("la media de los positivos es :" ,mediapositivos )        
+    print("la media de los negativos es :" ,medianegativos )
+    print(numeros)
+
+
+
