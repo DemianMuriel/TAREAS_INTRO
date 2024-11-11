@@ -1,0 +1,64 @@
+#material disponible
+tablas_largas_disponibles = 26
+tablas_cortas_disponibles = 33
+ganchos_pequenos_disponibles = 200
+ganchos_grandes_disponibles = 20
+tornillos_disponibles = 510
+
+# Materiales necesarios para el estante :)
+tablas_largas_necesarias = 4
+tablas_cortas_necesarias = 6
+ganchos_pequenos_necesarios = 12
+ganchos_grandes_necesarios = 2
+tornillos_necesarios = 14
+
+# Total de estantes pedidos
+estantes_pedidos = 15
+
+# lo necesario para los 15 estantes 
+total_tablas_largas = estantes_pedidos * tablas_largas_necesarias
+total_tablas_cortas = estantes_pedidos * tablas_cortas_necesarias
+total_ganchos_pequenos = estantes_pedidos * ganchos_pequenos_necesarios
+total_ganchos_grandes = estantes_pedidos * ganchos_grandes_necesarios
+total_tornillos = estantes_pedidos * tornillos_necesarios
+
+# ver si los materiales alcanzaran
+if (tablas_largas_disponibles >= total_tablas_largas and
+    tablas_cortas_disponibles >= total_tablas_cortas and
+    ganchos_pequenos_disponibles >= total_ganchos_pequenos and
+    ganchos_grandes_disponibles >= total_ganchos_grandes and
+    tornillos_disponibles >= total_tornillos):
+
+    print("Es posible realizar los 15 estantes pedidos.")
+
+    # Calculo el material que sobra
+    sobrante_tablas_largas = tablas_largas_disponibles - total_tablas_largas
+    sobrante_tablas_cortas = tablas_cortas_disponibles - total_tablas_cortas
+    sobrante_ganchos_pequenos = ganchos_pequenos_disponibles - total_ganchos_pequenos
+    sobrante_ganchos_grandes = ganchos_grandes_disponibles - total_ganchos_grandes
+    sobrante_tornillos = tornillos_disponibles - total_tornillos
+
+    # Calcular cuántos estantes adicionales se pueden construir con el material sobrante
+    estantes_sobrantes = min(
+        sobrante_tablas_largas // tablas_largas_necesarias,
+        sobrante_tablas_cortas // tablas_cortas_necesarias,
+        sobrante_ganchos_pequenos // ganchos_pequenos_necesarios,
+        sobrante_ganchos_grandes // ganchos_grandes_necesarios,
+        sobrante_tornillos // tornillos_necesarios)
+
+    print("Con el material sobrante puedes construir estantes",estantes_sobrantes)
+
+else:
+    # Calcular cuánto falta de cada material, pongo el cero para que no me salga un numero negativo
+    faltan_tablas_largas = max(0, total_tablas_largas - tablas_largas_disponibles)
+    faltan_tablas_cortas = max(0, total_tablas_cortas - tablas_cortas_disponibles)
+    faltan_ganchos_pequenos = max(0, total_ganchos_pequenos - ganchos_pequenos_disponibles)
+    faltan_ganchos_grandes = max(0, total_ganchos_grandes - ganchos_grandes_disponibles)
+    faltan_tornillos = max(0, total_tornillos - tornillos_disponibles)
+
+    print("No es posible cubrir el pedido porque faltan:")
+    print(faltan_tablas_largas, "tablas largas")
+    print(faltan_tablas_cortas, "tablas cortas")
+    print(faltan_ganchos_pequenos, "ganchos pequeños")
+    print(faltan_ganchos_grandes, "ganchos grandes")
+    print(faltan_tornillos, "tornillos")
