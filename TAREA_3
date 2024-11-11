@@ -1,4 +1,5 @@
-#material disponible
+#hice sin funciones por que trabaje solo
+material disponible
 tablas_largas_disponibles = 26
 tablas_cortas_disponibles = 33
 ganchos_pequenos_disponibles = 200
@@ -62,3 +63,4 @@ else:
     print(faltan_ganchos_pequenos, "ganchos pequeños")
     print(faltan_ganchos_grandes, "ganchos grandes")
     print(faltan_tornillos, "tornillos")
+#hice sin funciones por que trabaje solo
